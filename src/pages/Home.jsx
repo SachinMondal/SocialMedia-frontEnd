@@ -120,7 +120,8 @@ const Home = () => {
 
   const handleFriendRequest = async (id) => {
     try {
-      const res = await sendFriendRequest(user.token, id);
+      await sendFriendRequest(user.token, id);
+
       await fetchSuggestedFriends();
     } catch (error) {
       console.log(error);

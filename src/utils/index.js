@@ -71,7 +71,7 @@ export const likePost = async (token, uri) => {
 
 export const deletePost = async (id, token) => {
     try {
-        const res = await apiRequest({
+        await apiRequest({
             url: "/posts/" + id,
             token: token,
             method: "DELETE",
@@ -104,7 +104,7 @@ export const getUSerInfo = async (token, id) => {
 
 export const sendFriendRequest = async (token, id) => {
     try {
-        const res = await apiRequest({
+        await apiRequest({
             url: "/users/friend-request",
             token: token,
             method: "POST",
