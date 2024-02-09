@@ -17,7 +17,7 @@ const postSlice = createSlice({
 export default postSlice.reducer;
 
 export function SetPosts(post) {
-    return (dispatch, getState) => {
+    return (dispatch) => {
         dispatch(postSlice.actions.getPosts(post));
     };
 }

@@ -153,6 +153,7 @@ const Home = () => {
     fetchPost();
     fetchFriendRequest();
     fetchSuggestedFriends();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

@@ -41,6 +41,7 @@ const Profile = () => {
     setLoading(false);
     getUser();
     getPosts();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
   return (
     <>

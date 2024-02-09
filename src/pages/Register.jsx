@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
+
 import { useForm } from "react-hook-form";
 import { TbSocial } from "react-icons/tb";
 import { BsShare } from "react-icons/bs";
@@ -13,7 +13,6 @@ import { apiRequest } from "../utils";
 const Register = () => {
   const [errMsg, setErrMsg] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const dispatch = useDispatch();
   const {
     register,
     handleSubmit,
@@ -128,7 +127,7 @@ const Register = () => {
                   validate: (value) => {
                     const { password } = getValues();
 
-                    if (password != value) {
+                    if (password !== value) {
                       return "Passwords do no match";
                     }
                   },
@@ -144,7 +143,7 @@ const Register = () => {
             {errMsg?.message && (
               <span
                 className={`text-sm ${
-                  errMsg?.status == "failed"
+                  errMsg?.status === "failed"
                     ? "text-[#f64949fe]"
                     : "text-[#2ba150fe]"
                 } mt-0.5`}
@@ -179,7 +178,7 @@ const Register = () => {
           <div className="relative w-full flex items-center justify-center">
             <img
               src={BgImage}
-              alt="Bg Image"
+              alt="Bg"
               className="w-48 2xl:w-64 h-48 2xl:h-64 rounded-full object-cover"
             />
 
